@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy(corsPolicyName, policy =>
     {
-        policy.WithOrigins("*");
+        policy.WithOrigins("*").AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
     });
 });
 var app = builder.Build();
@@ -41,3 +41,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+//app.Run();
+
+public partial class Program { }
